@@ -1,0 +1,188 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
+
+const researchDirections = [
+  {
+    title: "TEST",
+    subtitle: "Alignment to Brain and Behavior",
+    description: "We thoroughly test the alignment of computational models to brain and behavioral data to uncover how brain-like representations are shaped.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`
+  },
+  {
+    title: "BUILD",
+    subtitle: "State-of-the-art Brain Models",
+    description: "We build brain-like models using task and data optimization. Our focus is on pathways from multimodal sensory input through language to cognitive behaviors.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>`
+  },
+  {
+    title: "APPLY",
+    subtitle: "Clinical Translation",
+    description: "We want our research to positively impact people's lives. We develop model-guided translational applications like visual prosthetics and interventions for dyslexia and depression.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>`
+  }
+];
+
+const publications = [
+  {
+    title: "Scaling Laws for Task-Optimized Models of the Primate Visual Ventral Stream",
+    venue: "ICML 2025",
+    highlight: "Spotlight"
+  },
+  {
+    title: "TopoLM: Brain-like Spatio-functional Organization in a Topographic Language Model",
+    venue: "ICLR 2025",
+    highlight: "Oral"
+  },
+  {
+    title: "The LLM Language Network: A Neuroscientific Approach for Identifying Causally Task-Relevant Units",
+    venue: "NAACL 2025",
+    highlight: "Oral"
+  }
+];
+---
+
+<Layout title="Home">
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden">
+    <!-- Background gradient -->
+    <div class="absolute inset-0 gradient-bg opacity-5"></div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[var(--color-primary-blue)]/5 to-transparent"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center space-x-2 bg-[var(--color-primary-green)]/10 text-[var(--color-primary-green)] px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <span>EPFL Neuro-X Institute</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+            Understanding
+            <span class="gradient-text"> Intelligence</span>
+            <br />Through AI & Neuroscience
+          </h1>
+          <p class="text-lg text-gray-600 mb-8 max-w-xl">
+            We bridge Deep Learning, Neuroscience, and Cognitive Science to build computational models 
+            that match the brain's neural representations and align with human behavior.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href={`${baseUrl}research/`} class="btn-primary inline-flex items-center">
+              Our Research
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a href={`${baseUrl}publications/`} class="inline-flex items-center px-6 py-3 border border-gray-300 rounded-lg text-gray-700 font-medium hover:border-[var(--color-primary-green)] hover:text-[var(--color-primary-green)] transition-colors">
+              Publications
+            </a>
+          </div>
+        </div>
+        <div class="hidden lg:flex justify-center">
+          <div class="relative">
+            <div class="absolute inset-0 gradient-bg rounded-3xl blur-3xl opacity-20 transform rotate-6"></div>
+            <img 
+              src={`${baseUrl}logo.png`} 
+              alt="NeuroAI Lab" 
+              class="relative w-80 h-80 object-contain"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Directions -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Research Directions</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          We engage on three synergistic research directions to understand the neural mechanisms underlying human intelligence.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {researchDirections.map((direction) => (
+          <div class="bg-white rounded-2xl p-8 shadow-sm card-hover border border-gray-100">
+            <div class="w-14 h-14 gradient-bg rounded-xl flex items-center justify-center text-white mb-6">
+              <Fragment set:html={direction.icon} />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{direction.title}</h3>
+            <p class="text-[var(--color-primary-green)] font-medium text-sm mb-4">{direction.subtitle}</p>
+            <p class="text-gray-600">{direction.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <a href={`${baseUrl}research/`} class="inline-flex items-center text-[var(--color-primary-green)] font-medium hover:underline">
+          Learn more about our research
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Publications -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">Recent Publications</h2>
+          <p class="text-gray-600">Our latest contributions to the field</p>
+        </div>
+        <a href={`${baseUrl}publications/`} class="mt-4 sm:mt-0 inline-flex items-center text-[var(--color-primary-green)] font-medium hover:underline">
+          View all publications
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid gap-6">
+        {publications.map((pub) => (
+          <div class="bg-white border border-gray-100 rounded-xl p-6 card-hover">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">{pub.title}</h3>
+                <div class="flex items-center gap-3">
+                  <span class="text-gray-500 text-sm">{pub.venue}</span>
+                  {pub.highlight && (
+                    <span class="badge badge-conference">{pub.highlight}</span>
+                  )}
+                </div>
+              </div>
+              <a href="#" class="text-[var(--color-primary-green)] hover:underline text-sm font-medium whitespace-nowrap">
+                Read paper →
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Us CTA -->
+  <section class="py-20 gradient-bg">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">Join Our Team</h2>
+      <p class="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+        We're always looking for talented and motivated researchers passionate about understanding intelligence 
+        through the lens of neuroscience and AI.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href={`${baseUrl}join/`} class="inline-flex items-center px-6 py-3 bg-white text-[var(--color-primary-green)] rounded-lg font-medium hover:bg-gray-100 transition-colors">
+          Open Positions
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <a href={`${baseUrl}people/`} class="inline-flex items-center px-6 py-3 border border-white/30 text-white rounded-lg font-medium hover:bg-white/10 transition-colors">
+          Meet the Team
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

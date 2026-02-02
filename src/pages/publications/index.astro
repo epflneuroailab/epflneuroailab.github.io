@@ -1,0 +1,232 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import publications from '../../data/publications.json';
+
+const baseUrl = import.meta.env.BASE_URL;
+
+// Sort publications by year (newest first)
+const sortedPublications = [...publications].sort((a, b) => b.year - a.year);
+
+// Get unique years for grouping
+const years = [...new Set(sortedPublications.map(p => p.year))].sort((a, b) => b - a);
+
+// Publication type labels
+const typeLabels: Record<string, string> = {
+  conference: 'Conference',
+  journal: 'Journal',
+  workshop: 'Workshop',
+  preprint: 'Preprint'
+};
+
+const typeColors: Record<string, string> = {
+  conference: 'badge-conference',
+  journal: 'badge-journal',
+  workshop: 'badge-workshop',
+  preprint: 'badge-preprint'
+};
+---
+
+<Layout title="Publications" description="Publications from the EPFL NeuroAI Lab">
+  <!-- Hero Section -->
+  <section class="relative py-16 lg:py-24 overflow-hidden">
+    <div class="absolute inset-0 gradient-bg opacity-5"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+          <span class="gradient-text">Publications</span>
+        </h1>
+        <p class="text-lg text-gray-600 mb-8">
+          Our research contributions to neuroscience, machine learning, and cognitive science.
+        </p>
+        <a 
+          href="https://scholar.google.com/citations?user=YOUR_ID" 
+          target="_blank" 
+          rel="noopener"
+          class="inline-flex items-center text-[var(--color-primary-green)] font-medium hover:underline"
+        >
+          View full list on Google Scholar
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <section class="sticky top-16 z-40 bg-white border-b border-gray-100 py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="text-sm font-medium text-gray-500">Filter:</span>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="conference">Conference</button>
+        <button class="filter-btn" data-filter="journal">Journal</button>
+        <button class="filter-btn" data-filter="workshop">Workshop</button>
+        <button class="filter-btn" data-filter="preprint">Preprint</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications List -->
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {years.map((year) => (
+        <div class="mb-12 year-group" data-year={year}>
+          <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">
+            {year}
+          </h2>
+          <div class="space-y-4">
+            {sortedPublications
+              .filter(pub => pub.year === year)
+              .map((pub) => (
+                <article 
+                  class="publication-item bg-white border border-gray-100 rounded-xl p-6 card-hover"
+                  data-type={pub.type}
+                >
+                  <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
+                    <div class="flex-1">
+                      <div class="flex flex-wrap items-center gap-2 mb-2">
+                        <span class={`badge ${typeColors[pub.type]}`}>
+                          {typeLabels[pub.type]}
+                        </span>
+                        {pub.highlight && (
+                          <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-yellow-100 text-yellow-800">
+                            {pub.highlight}
+                          </span>
+                        )}
+                      </div>
+                      <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                        {pub.title}
+                      </h3>
+                      <p class="text-gray-600 text-sm mb-2">
+                        {pub.authors.join(', ')}
+                      </p>
+                      <p class="text-gray-500 text-sm">
+                        {pub.venue}
+                      </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 lg:flex-col lg:items-end">
+                      {pub.links.paper && pub.links.paper !== '#' && (
+                        <a 
+                          href={pub.links.paper} 
+                          target="_blank" 
+                          rel="noopener"
+                          class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-[var(--color-primary-green)] bg-[var(--color-primary-green)]/5 rounded-lg hover:bg-[var(--color-primary-green)]/10 transition-colors"
+                        >
+                          <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                          Paper
+                        </a>
+                      )}
+                      {pub.links.paper === '#' && (
+                        <span class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-[var(--color-primary-green)] bg-[var(--color-primary-green)]/5 rounded-lg">
+                          <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                          Paper
+                        </span>
+                      )}
+                      {pub.links.code && pub.links.code !== '#' && (
+                        <a 
+                          href={pub.links.code} 
+                          target="_blank" 
+                          rel="noopener"
+                          class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
+                        >
+                          <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                          </svg>
+                          Code
+                        </a>
+                      )}
+                      {pub.links.project && pub.links.project !== '#' && (
+                        <a 
+                          href={pub.links.project} 
+                          target="_blank" 
+                          rel="noopener"
+                          class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
+                        >
+                          <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                          </svg>
+                          Project
+                        </a>
+                      )}
+                      {pub.links.website && (
+                        <a 
+                          href={pub.links.website} 
+                          target="_blank" 
+                          rel="noopener"
+                          class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
+                        >
+                          <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                          Website
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </article>
+              ))}
+          </div>
+        </div>
+      ))}
+
+      <!-- Empty state for filtered results -->
+      <div id="no-results" class="hidden text-center py-12">
+        <svg class="w-16 h-16 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+        <p class="text-gray-500">No publications found for this filter.</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const publicationItems = document.querySelectorAll('.publication-item');
+  const yearGroups = document.querySelectorAll('.year-group');
+  const noResults = document.getElementById('no-results');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+      
+      // Update active button
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Filter publications
+      let visibleCount = 0;
+      publicationItems.forEach(item => {
+        const type = item.getAttribute('data-type');
+        if (filter === 'all' || type === filter) {
+          item.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+
+      // Show/hide year groups based on visible items
+      yearGroups.forEach(group => {
+        const visibleInGroup = group.querySelectorAll('.publication-item:not(.hidden)').length;
+        if (visibleInGroup === 0) {
+          group.classList.add('hidden');
+        } else {
+          group.classList.remove('hidden');
+        }
+      });
+
+      // Show/hide no results message
+      if (visibleCount === 0) {
+        noResults?.classList.remove('hidden');
+      } else {
+        noResults?.classList.add('hidden');
+      }
+    });
+  });
+</script>

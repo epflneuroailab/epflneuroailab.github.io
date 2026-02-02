@@ -1,0 +1,200 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
+
+const researchAreas = [
+  {
+    id: 'test',
+    title: 'TEST',
+    subtitle: 'Alignment to Brain and Behavior',
+    description: `We thoroughly test the alignment of computational models to brain and behavioral data to uncover how brain-like representations are shaped. Our approach involves rigorous benchmarking of neural network models against neural recordings and behavioral responses from humans and other primates.`,
+    details: [
+      'Developing comprehensive benchmarks for brain-model alignment',
+      'Testing model predictions against neural recordings from multiple brain regions',
+      'Evaluating behavioral alignment across diverse cognitive tasks',
+      'Understanding what architectural and training choices lead to more brain-like representations'
+    ],
+    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
+    color: 'green'
+  },
+  {
+    id: 'build',
+    title: 'BUILD',
+    subtitle: 'State-of-the-art Brain Models',
+    description: `We build brain-like models using task and data optimization. Our focus is on pathways from multimodal sensory input through language to cognitive behaviors. We develop neural network architectures that capture the computational principles of biological neural systems.`,
+    details: [
+      'Creating models that match the brain\'s hierarchical processing',
+      'Developing topographic organization in language models',
+      'Building multimodal models that integrate vision, language, and cognition',
+      'Investigating scaling laws for brain-aligned models'
+    ],
+    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>`,
+    color: 'blue'
+  },
+  {
+    id: 'apply',
+    title: 'APPLY',
+    subtitle: 'Clinical Translation',
+    description: `We want our research to positively impact people's lives. Towards this, we are developing model-guided open- and closed-loop translational applications. Our clinical work focuses on conditions where understanding brain representations can lead to better interventions.`,
+    details: [
+      'Visual prosthetics guided by brain-like models',
+      'Understanding and addressing dyslexia through computational models',
+      'Model-based approaches to depression and mental health',
+      'Developing personalized interventions based on individual neural representations'
+    ],
+    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>`,
+    color: 'purple'
+  }
+];
+
+const platforms = [
+  {
+    name: 'Brain-Score',
+    description: 'A platform for quantifying the similarity of neural network models to the brain.',
+    url: 'https://brain-score.org',
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>`
+  }
+];
+---
+
+<Layout title="Research" description="Research directions at EPFL NeuroAI Lab">
+  <!-- Hero Section -->
+  <section class="relative py-16 lg:py-24 overflow-hidden">
+    <div class="absolute inset-0 gradient-bg opacity-5"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+          Our <span class="gradient-text">Research</span>
+        </h1>
+        <p class="text-lg text-gray-600">
+          We focus on a computational understanding of the neural mechanisms underlying human natural intelligence. 
+          To achieve this goal, we bridge Deep Learning, Neuroscience, and Cognitive Science.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Directions -->
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-16">
+        {researchAreas.map((area, index) => (
+          <div 
+            id={area.id}
+            class={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 lg:gap-16 items-start`}
+          >
+            <div class="lg:w-1/3">
+              <div class={`w-20 h-20 rounded-2xl flex items-center justify-center mb-6 ${
+                area.color === 'green' ? 'bg-[var(--color-primary-green)]/10 text-[var(--color-primary-green)]' :
+                area.color === 'blue' ? 'bg-[var(--color-primary-blue)]/10 text-[var(--color-primary-blue)]' :
+                'bg-purple-100 text-purple-600'
+              }`}>
+                <Fragment set:html={area.icon} />
+              </div>
+              <h2 class="text-3xl font-bold text-gray-900 mb-2">{area.title}</h2>
+              <p class={`text-lg font-medium mb-4 ${
+                area.color === 'green' ? 'text-[var(--color-primary-green)]' :
+                area.color === 'blue' ? 'text-[var(--color-primary-blue)]' :
+                'text-purple-600'
+              }`}>
+                {area.subtitle}
+              </p>
+            </div>
+            <div class="lg:w-2/3">
+              <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                {area.description}
+              </p>
+              <ul class="space-y-3">
+                {area.details.map((detail) => (
+                  <li class="flex items-start">
+                    <svg class={`w-5 h-5 mr-3 mt-0.5 flex-shrink-0 ${
+                      area.color === 'green' ? 'text-[var(--color-primary-green)]' :
+                      area.color === 'blue' ? 'text-[var(--color-primary-blue)]' :
+                      'text-purple-600'
+                    }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="text-gray-600">{detail}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Platforms & Tools -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Platforms & Tools</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          We develop and maintain open-source tools for the research community.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-1 gap-6 max-w-xl mx-auto">
+        {platforms.map((platform) => (
+          <a 
+            href={platform.url}
+            target="_blank"
+            rel="noopener"
+            class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 card-hover flex items-start gap-6"
+          >
+            <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center text-white flex-shrink-0">
+              <Fragment set:html={platform.icon} />
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">{platform.name}</h3>
+              <p class="text-gray-600 mb-3">{platform.description}</p>
+              <span class="inline-flex items-center text-[var(--color-primary-green)] font-medium text-sm">
+                Visit website
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaching Section -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Teaching</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          We offer courses that bridge computational expertise with neuroscience fundamentals.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+          <span class="inline-block px-3 py-1 bg-[var(--color-primary-green)]/10 text-[var(--color-primary-green)] text-sm font-medium rounded-full mb-4">
+            Bachelor
+          </span>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">BIOENG-310</h3>
+          <p class="text-[var(--color-primary-green)] font-medium mb-3">Neuroscience Foundations for Engineers</p>
+          <p class="text-gray-600 text-sm">
+            This overview course bridges computational expertise with neuroscience fundamentals, 
+            aimed at fostering interdisciplinary communication and collaboration for engineering-based neuroscience programs.
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+          <span class="inline-block px-3 py-1 bg-[var(--color-primary-blue)]/10 text-[var(--color-primary-blue)] text-sm font-medium rounded-full mb-4">
+            Master
+          </span>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">NX-414</h3>
+          <p class="text-[var(--color-primary-blue)] font-medium mb-3">Brain-like Computation and Intelligence</p>
+          <p class="text-gray-600 text-sm">
+            Recent advances in machine learning have contributed to the emergence of powerful models of animal perception and behavior. 
+            In this course we compare the behavior and underlying mechanisms in these models as well as brains.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

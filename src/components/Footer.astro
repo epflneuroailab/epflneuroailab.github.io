@@ -1,0 +1,84 @@
+---
+const baseUrl = import.meta.env.BASE_URL;
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-gray-900 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Logo and description -->
+      <div class="md:col-span-2">
+        <a href={baseUrl} class="flex items-center space-x-3 mb-4">
+          <img 
+            src={`${baseUrl}logo.png`} 
+            alt="NeuroAI Lab Logo" 
+            class="h-12 w-12 rounded-lg"
+          />
+          <span class="text-xl font-bold">NeuroAI Lab</span>
+        </a>
+        <p class="text-gray-400 text-sm max-w-md">
+          We are the NeuroAI research group at the EPFL Neuro-X Institute, bridging Deep Learning, 
+          Neuroscience, and Cognitive Science to understand the neural mechanisms underlying human intelligence.
+        </p>
+        <div class="flex space-x-4 mt-4">
+          <a href="https://twitter.com/scikirc" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/company/epfl-neuroai-lab" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-wider mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href={`${baseUrl}people/`} class="text-gray-400 hover:text-white text-sm transition-colors">People</a></li>
+          <li><a href={`${baseUrl}publications/`} class="text-gray-400 hover:text-white text-sm transition-colors">Publications</a></li>
+          <li><a href={`${baseUrl}research/`} class="text-gray-400 hover:text-white text-sm transition-colors">Research</a></li>
+          <li><a href={`${baseUrl}join/`} class="text-gray-400 hover:text-white text-sm transition-colors">Join Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-wider mb-4">Contact</h3>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li>EPFL Neuro-X Institute</li>
+          <li>BC 206 (Main Campus Lausanne)</li>
+          <li>B1 0 261.050 (Campus Biotech Geneva)</li>
+          <li class="pt-2">
+            <a href="mailto:martin.schrimpf@epfl.ch" class="hover:text-white transition-colors">
+              martin.schrimpf@epfl.ch
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
+      <p class="text-gray-400 text-sm">
+        &copy; {currentYear} NeuroAI Lab, EPFL. All rights reserved.
+      </p>
+      <div class="flex items-center space-x-4 mt-4 sm:mt-0">
+        <a href="https://www.epfl.ch" target="_blank" rel="noopener" class="text-gray-400 hover:text-white text-sm transition-colors">
+          EPFL
+        </a>
+        <span class="text-gray-600">|</span>
+        <a href="https://www.epfl.ch/research/domains/neurox/" target="_blank" rel="noopener" class="text-gray-400 hover:text-white text-sm transition-colors">
+          Neuro-X Institute
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

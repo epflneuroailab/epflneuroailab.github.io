@@ -1,0 +1,95 @@
+[
+  {
+    "title": "Scaling Laws for Task-Optimized Models of the Primate Visual Ventral Stream",
+    "authors": ["Abdülkadir Gökce", "Martin Schrimpf"],
+    "venue": "ICML 2025",
+    "year": 2025,
+    "type": "conference",
+    "highlight": "Spotlight",
+    "links": {
+      "paper": "#",
+      "code": "#",
+      "project": "#"
+    }
+  },
+  {
+    "title": "TopoLM: Brain-like Spatio-functional Organization in a Topographic Language Model",
+    "authors": ["Mayank Rathi*", "Johannes Mehrer*", "Badr AlKhamissi", "Abdulrahman Binhuraib", "Nicholas Blauch", "Martin Schrimpf"],
+    "venue": "ICLR 2025",
+    "year": 2025,
+    "type": "conference",
+    "highlight": "Oral",
+    "links": {
+      "paper": "#",
+      "code": "#",
+      "project": "#"
+    }
+  },
+  {
+    "title": "The LLM Language Network: A Neuroscientific Approach for Identifying Causally Task-Relevant Units",
+    "authors": ["Badr AlKhamissi", "Greta Tuckute", "Antoine Bosselut", "Martin Schrimpf"],
+    "venue": "NAACL 2025",
+    "year": 2025,
+    "type": "conference",
+    "highlight": "Oral",
+    "links": {
+      "paper": "#",
+      "code": "#",
+      "project": "#"
+    }
+  },
+  {
+    "title": "Inducing Dyslexia in Vision Language Models",
+    "authors": ["Melika Honarmand", "Rishit Sharma", "Badr AlKhamissi", "Johannes Mehrer", "Martin Schrimpf"],
+    "venue": "arXiv",
+    "year": 2025,
+    "type": "preprint",
+    "links": {
+      "paper": "#"
+    }
+  },
+  {
+    "title": "Driving and Suppressing the Human Language Network Using Large Language Models",
+    "authors": ["Greta Tuckute", "Aalok Sathe", "Shashank Srikant", "Maya Taliaferro", "Mingye Wang", "Martin Schrimpf", "Kendrick Kay", "Evelina Fedorenko"],
+    "venue": "Nature Human Behavior",
+    "year": 2024,
+    "type": "journal",
+    "links": {
+      "paper": "#",
+      "code": "#"
+    }
+  },
+  {
+    "title": "The Neural Architecture of Language: Integrative Modeling Converges on Predictive Processing",
+    "authors": ["Martin Schrimpf", "Idan Blank", "Greta Tuckute", "Carina Kauf", "Eghbal Hosseini", "Nancy Kanwisher", "Joshua Tenenbaum", "Evelina Fedorenko"],
+    "venue": "PNAS",
+    "year": 2021,
+    "type": "journal",
+    "links": {
+      "paper": "#",
+      "code": "#"
+    }
+  },
+  {
+    "title": "Brain-Score: Which Artificial Neural Network for Object Recognition is most Brain-Like?",
+    "authors": ["Martin Schrimpf", "Jonas Kubilius", "Ha Hong", "Najib Majaj", "Rishi Rajalingham", "Elias Issa", "Kohitij Kar", "Pouya Bashivan", "Jonathan Prescott-Roy", "Franziska Geiger", "Kailyn Schmidt", "Daniel Yamins", "James DiCarlo"],
+    "venue": "bioRxiv",
+    "year": 2018,
+    "type": "preprint",
+    "links": {
+      "paper": "#",
+      "code": "#",
+      "website": "https://brain-score.org"
+    }
+  },
+  {
+    "title": "Integrative Benchmarking to Advance Neurally Mechanistic Models of Human Intelligence",
+    "authors": ["Martin Schrimpf", "Jonas Kubilius", "Michael Lee", "N. Apurva Ratan Murty", "Robert Ajemian", "James DiCarlo"],
+    "venue": "Neuron",
+    "year": 2020,
+    "type": "journal",
+    "links": {
+      "paper": "#"
+    }
+  }
+]

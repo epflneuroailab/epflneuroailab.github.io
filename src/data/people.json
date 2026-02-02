@@ -1,0 +1,120 @@
+{
+  "faculty": [
+    {
+      "name": "Martin Schrimpf",
+      "role": "Tenure Track Assistant Professor",
+      "email": "martin.schrimpf@epfl.ch",
+      "image": "martin.jpg",
+      "website": "https://mschrimpf.com",
+      "scholar": "https://scholar.google.com/citations?user=YOUR_ID"
+    }
+  ],
+  "staff": [
+    {
+      "name": "Stéphanie Debayle",
+      "role": "Administrative Assistant",
+      "email": "stephanie.debayle@epfl.ch",
+      "image": "stephanie.jpg"
+    }
+  ],
+  "scientists": [
+    {
+      "name": "Johannes Mehrer",
+      "role": "Scientist",
+      "email": "johannes.mehrer@epfl.ch",
+      "image": "johannes.jpg"
+    }
+  ],
+  "phd_students": [
+    {
+      "name": "Badr AlKhamissi",
+      "role": "Doctoral Assistant",
+      "email": "badr.alkhamissi@epfl.ch",
+      "image": "badr.jpg",
+      "website": "https://bkhmsi.github.io"
+    },
+    {
+      "name": "Abdülkadir Gökce",
+      "role": "Doctoral Assistant",
+      "email": "abdulkadir.gokce@epfl.ch",
+      "image": "abdulkadir.jpg"
+    },
+    {
+      "name": "Melika Honarmand",
+      "role": "Doctoral Assistant",
+      "email": "melika.honarmand@epfl.ch",
+      "image": "melika.jpg"
+    },
+    {
+      "name": "Xiaoxuan Li",
+      "role": "Doctoral Assistant",
+      "email": "xiaoxuan.li@epfl.ch",
+      "image": "xiaoxuan.jpg"
+    },
+    {
+      "name": "Aude Maier",
+      "role": "Doctoral Assistant",
+      "email": "aude.maier@epfl.ch",
+      "image": "aude.jpg"
+    },
+    {
+      "name": "Yingtian Tang",
+      "role": "Doctoral Assistant",
+      "email": "yingtian.tang@epfl.ch",
+      "image": "yingtian.jpg"
+    }
+  ],
+  "project_students": [
+    {
+      "name": "Ahmed Mohamed Ahmed Abdelaal",
+      "role": "Project Student",
+      "email": "ahmed.abdelaal@epfl.ch",
+      "image": "ahmed.jpg"
+    },
+    {
+      "name": "Jannis Alexander Ahlert",
+      "role": "Project Student",
+      "email": "jannis.ahlert@epfl.ch",
+      "image": "jannis.jpg"
+    },
+    {
+      "name": "Daphné De Quatrebarbes",
+      "role": "Project Student",
+      "email": "daphne.dequatrebarbes@epfl.ch",
+      "image": "daphne.jpg"
+    },
+    {
+      "name": "Eylül Ipçi",
+      "role": "Project Student",
+      "email": "eylul.ipci@epfl.ch",
+      "image": "eylul.jpg"
+    },
+    {
+      "name": "Lara Diane Marinov",
+      "role": "Project Student",
+      "email": "lara.marinov@epfl.ch",
+      "image": "lara.jpg"
+    },
+    {
+      "name": "Nona Rajabi",
+      "role": "Project Student",
+      "email": "nona.rajabi@epfl.ch",
+      "image": "nona.jpg"
+    },
+    {
+      "name": "Sophie Sigfstead",
+      "role": "Project Student",
+      "email": "sophie.sigfstead@epfl.ch",
+      "image": "sophie.jpg"
+    }
+  ],
+  "visitors": [
+    {
+      "name": "Ben Lönnqvist",
+      "role": "Invited Guest",
+      "email": "ben.lonnqvist@epfl.ch",
+      "image": "ben.jpg"
+    }
+  ],
+  "alumni": []
+}

@@ -1,0 +1,187 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
+
+const positions = [
+  {
+    title: 'PhD Applicants',
+    description: 'We are always looking for highly talented and motivated students.',
+    details: [
+      'At EPFL you apply to central PhD programs rather than an individual lab directly',
+      'We hire from the EDIC and EDNE programs',
+      'Prospective ELLIS students must first be admitted through these programs',
+      'To keep things fair for all applicants, we typically do not hold meetings before the initial screening'
+    ],
+    links: [
+      { label: 'EDIC Program', url: 'https://www.epfl.ch/education/phd/edic-computer-and-communication-sciences/' },
+      { label: 'EDNE Program', url: 'https://www.epfl.ch/education/phd/edne-neuroscience/' }
+    ],
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5zm0 0v6m-3-3l3 3 3-3" /></svg>`
+  },
+  {
+    title: 'Postdocs',
+    description: 'We expect a strong background in ML and/or neuroscience, demonstrated by publications.',
+    details: [
+      'Please email Martin Schrimpf directly with your CV, cc\'ing Stéphanie Debayle',
+      'Consider applying to postdoctoral fellowships from various funding bodies'
+    ],
+    links: [
+      { label: 'SNSF Fellowships', url: 'https://www.snf.ch/en' },
+      { label: 'Marie Curie', url: 'https://marie-sklodowska-curie-actions.ec.europa.eu/' },
+      { label: 'EPFL AI Center', url: 'https://www.epfl.ch/research/domains/ai-center/' }
+    ],
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`
+  },
+  {
+    title: 'BS/MS Interns & Project Students',
+    description: 'For EPFL students or those considering a longer-term visit (6-12 months full-time).',
+    details: [
+      'We strongly prefer students who can commit to at least 2 full days per week',
+      'For non-EPFL students, consider the SRP and Summer@EPFL programs',
+      'We generally only support ThinkSwiss applications for previous interns/collaborators',
+      'Check our project list and contact group members whose research excites you'
+    ],
+    links: [
+      { label: 'Apply Here', url: '#' },
+      { label: 'Summer@EPFL', url: 'https://summer.epfl.ch/' },
+      { label: 'SRP Program', url: 'https://www.epfl.ch/education/international/en/coming-to-epfl/research-internships/' }
+    ],
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>`
+  }
+];
+
+const values = [
+  {
+    title: 'Interdisciplinary',
+    description: 'We bridge computer science, neuroscience, and cognitive science.',
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" /></svg>`
+  },
+  {
+    title: 'Collaborative',
+    description: 'We work closely with labs around the world.',
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>`
+  },
+  {
+    title: 'Impactful',
+    description: 'We aim to translate research into real-world applications.',
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`
+  },
+  {
+    title: 'Open Science',
+    description: 'We share our code, data, and tools with the community.',
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>`
+  }
+];
+---
+
+<Layout title="Join Us" description="Join the EPFL NeuroAI Lab - Open positions for PhD students, postdocs, and interns">
+  <!-- Hero Section -->
+  <section class="relative py-16 lg:py-24 overflow-hidden">
+    <div class="absolute inset-0 gradient-bg opacity-5"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+          Join <span class="gradient-text">Our Team</span>
+        </h1>
+        <p class="text-lg text-gray-600">
+          We're always looking for talented and motivated researchers passionate about understanding 
+          intelligence through the lens of neuroscience and artificial intelligence.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lab Values -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {values.map((value) => (
+          <div class="bg-white rounded-xl p-6 border border-gray-100">
+            <div class="w-12 h-12 gradient-bg rounded-lg flex items-center justify-center text-white mb-4">
+              <Fragment set:html={value.icon} />
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-2">{value.title}</h3>
+            <p class="text-gray-600 text-sm">{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Open Positions -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Open Positions</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Find information about how to join the lab at different career stages.
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        {positions.map((position) => (
+          <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
+            <div class="p-8">
+              <div class="flex items-start gap-6">
+                <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center text-white flex-shrink-0">
+                  <Fragment set:html={position.icon} />
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold text-gray-900 mb-2">{position.title}</h3>
+                  <p class="text-gray-600 mb-4">{position.description}</p>
+                  
+                  <ul class="space-y-2 mb-6">
+                    {position.details.map((detail) => (
+                      <li class="flex items-start text-sm text-gray-600">
+                        <svg class="w-5 h-5 mr-2 text-[var(--color-primary-green)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div class="flex flex-wrap gap-3">
+                    {position.links.map((link) => (
+                      <a 
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener"
+                        class="inline-flex items-center px-4 py-2 text-sm font-medium text-[var(--color-primary-green)] bg-[var(--color-primary-green)]/5 rounded-lg hover:bg-[var(--color-primary-green)]/10 transition-colors"
+                      >
+                        {link.label}
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="py-16 gradient-bg">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">Have Questions?</h2>
+      <p class="text-white/90 mb-8 max-w-2xl mx-auto">
+        Feel free to reach out if you have questions about opportunities in our lab.
+      </p>
+      <a 
+        href={`${baseUrl}contact/`}
+        class="inline-flex items-center px-6 py-3 bg-white text-[var(--color-primary-green)] rounded-lg font-medium hover:bg-gray-100 transition-colors"
+      >
+        Contact Us
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+</Layout>
