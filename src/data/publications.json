@@ -1,5 +1,50 @@
 [
   {
+    "title": "Mixture of Cognitive Reasoners: Modular Reasoning with Brain-Like Specialization",
+    "authors": ["Badr AlKhamissi",  "C. Nicolò De Sabbata",  "Greta Tuckute",  "Zeming Chen", "Martin Schrimpf*",  "Antoine Bosselut*"],
+    "venue": "ICLR 2026",
+    "year": 2026,
+    "type": "conference",
+    "links": {
+      "paper": "https://arxiv.org/abs/2506.13331",
+      "code": "https://github.com/bkhmsi/mixture-of-cognitive-reasoners",
+      "project": "https://cognitive-reasoners.epfl.ch"
+    }
+  },
+  {
+    "title": "Inducing Dyslexia in Vision Language Models",
+    "authors": ["Melika Honarmand", "Rishit Sharma", "Badr AlKhamissi", "Johannes Mehrer", "Martin Schrimpf"],
+    "venue": "ICLR 2026",
+    "year": 2026,
+    "type": "conference",
+    "links": {
+      "paper": "https://arxiv.org/abs/2509.24597"
+    }
+  },
+  {
+    "title": "Model-Guided Microstimulation Steers Primate Visual Behavior",
+    "authors": ["Johannes Mehrer", "Ben Lonnqvist", "Anna Mitola", "Abdulkadir Gokce", "Paolo Papale", "Martin Schrimpf"],
+    "venue": "ICLR 2026",
+    "year": 2026,
+    "type": "conference",
+    "links": {
+      "paper": "https://arxiv.org/abs/2510.03684"
+    }
+  },
+  {
+    "title": "From Language to Cognition: How LLMs Outgrow the Human Language Network",
+    "authors": ["Badr AlKhamissi", "Greta Tuckute", "Yingtian Tang", "Taha Binhuraib", "Antoine Bosselut*", "Martin Schrimpf*"],
+    "venue": "EMNLP 2025",
+    "year": 2025,
+    "type": "conference",
+    "highlight": "Oral",
+    "links": {
+      "paper": "https://aclanthology.org/2025.emnlp-main.1237/",
+      "code": "#",
+      "project": "https://language-to-cognition.epfl.ch"
+    }
+  },
+  {
     "title": "Scaling Laws for Task-Optimized Models of the Primate Visual Ventral Stream",
     "authors": ["Abdülkadir Gökce", "Martin Schrimpf"],
     "venue": "ICML 2025",
@@ -7,22 +52,22 @@
     "type": "conference",
     "highlight": "Spotlight",
     "links": {
-      "paper": "#",
-      "code": "#",
-      "project": "#"
+      "paper": "https://arxiv.org/abs/2411.05712",
+      "code": "https://github.com/epflneuroailab/scaling-primate-vvs",
+      "project": "https://scaling-primate-vvs.epfl.ch"
     }
   },
   {
     "title": "TopoLM: Brain-like Spatio-functional Organization in a Topographic Language Model",
-    "authors": ["Mayank Rathi*", "Johannes Mehrer*", "Badr AlKhamissi", "Abdulrahman Binhuraib", "Nicholas Blauch", "Martin Schrimpf"],
+    "authors": ["Neil Rathi*", "Johannes Mehrer*", "Badr AlKhamissi", "Taha Binhuraib", "Nicholas Blauch", "Martin Schrimpf"],
     "venue": "ICLR 2025",
     "year": 2025,
     "type": "conference",
     "highlight": "Oral",
     "links": {
-      "paper": "#",
-      "code": "#",
-      "project": "#"
+      "paper": "https://doi.org/10.48550/arXiv.2410.11516",
+      "code": "https://github.com/epflneuroailab/topolm",
+      "project": "https://topolm.epfl.ch"
     }
   },
   {
@@ -33,17 +78,97 @@
     "type": "conference",
     "highlight": "Oral",
     "links": {
-      "paper": "#",
-      "code": "#",
-      "project": "#"
+      "paper": "https://aclanthology.org/2025.naacl-long.544/",
+      "code": "https://github.com/bkhmsi/llm-localization",
+      "project": "https://llm-language-network.epfl.ch"
     }
   },
   {
-    "title": "Inducing Dyslexia in Vision Language Models",
-    "authors": ["Melika Honarmand", "Rishit Sharma", "Badr AlKhamissi", "Johannes Mehrer", "Martin Schrimpf"],
-    "venue": "arXiv",
+    "title": "Evaluating Contrast Localizer for Identifying Causal Units in Social & Mathematical Tasks in Language Models",
+    "authors": ["Yassine Jamaa", "Badr AlKhamissi", "Satrajit Ghosh", "Martin Schrimpf"],
+    "venue": "COLM Workshop INTERPLAY",
+    "year": 2025,
+    "type": "workshop",
+    "links": {
+      "paper": "https://arxiv.org/abs/2508.08276"
+    }
+  },
+  {
+    "title": "Diverse Perceptual Representations Across Visual Pathways Emerge from a Single Objective",
+    "authors": ["Yingtian Tang",  "Abdulkadir Gokce", "Khaled Jedoui Al-Karkari", "Daniel Yamins",  "Martin Schrimpf"],
+    "venue": "bioRxiv",
     "year": 2025,
     "type": "preprint",
+    "links": {
+      "paper": "https://doi.org/10.1101/2025.07.22.664908"
+    }
+  },
+  {
+    "title": "Contour Integration Underlies Human-Like Vision",
+    "authors": ["Ben Lonnqvist", "Elsa Scialom", "Abdulkadir Gokce", "Zehra Merchant", "Michael H. Herzog", "Martin Schrimpf"],
+    "venue": "ICML 2025",
+    "year": 2025,
+    "type": "conference",
+    "links": {
+      "paper": "https://arxiv.org/abs/2504.05253"
+    }
+  },
+  {
+    "title": "Dreaming Out Loud: A Self-Synthesis Approach For Training Vision-Language Models With Developmentally Plausible Data",
+    "authors": ["Badr AlKhamissi", "Yingtian Tang", "Abdülkadir Gökce", "Johannes Mehrer", "Martin Schrimpf"],
+    "venue": "EMNLP 2024 Workshop CoNLL BabyLM",
+    "year": 2024,
+    "type": "workshop",
+    "links": {
+      "paper": "https://arxiv.org/abs/2411.00828"
+    }
+  },
+  {
+    "title": "How Well is Visual Search Asymmetry predicted by a Binary-Choice, Rapid, Accuracy-based Visual-search, Oddball-detection (BRAVO) task?",
+    "authors": ["ME Ferguson Jr", "J Ngo", "M Lee", "JJ DiCarlo**", "M Schrimpf**"],
+    "venue": "OSF",
+    "year": 2024,
+    "type": "preprint",
+    "links": {
+      "paper": "#"
+    }
+  },
+  {
+    "title": "Brain-Like Language Processing via a Shallow Untrained Multihead Attention Network",
+    "authors": ["Badr AlKhamissi", "Greta Tuckute", "Antoine Bosselut*", "Martin Schrimpf*"],
+    "venue": "arXiv preprint arXiv:2406.15109",
+    "year": 2024,
+    "type": "preprint",
+    "links": {
+      "paper": "https://arxiv.org/abs/2406.15109"
+    }
+  },
+  {
+    "title": "Artificial Neural Network Language Models Predict Human Brain Responses to Language Even After a Developmentally Realistic Amount of Training",
+    "authors": ["Eghbal A. Hosseini", "Martin Schrimpf", "Yicheng Zhang", "Samuel Bowman", "Nora Zaslavsky", "Evelina Fedorenko"],
+    "venue": "Neurobiology of Language",
+    "year": 2024,
+    "type": "journal",
+    "links": {
+      "paper": "#"
+    }
+  },
+  {
+    "title": "Do Topographic Deep ANN Models of the Primate Ventral Stream Predict the Perceptual Effects of Direct IT Cortical Interventions?",
+    "authors": ["M Schrimpf", "P McGrath", "E Margalit", "JJ DiCarlo"],
+    "venue": "bioRxiv",
+    "year": 2024,
+    "type": "preprint",
+    "links": {
+      "paper": "https://doi.org/10.1101/2024.01.09.572970"
+    }
+  },
+  {
+    "title": "Instruction-tuned LLMs with World Knowledge are More Aligned to the Human Brain",
+    "authors": ["KL Aw", "S Montariol", "B AlKhamissi", "M Schrimpf**", "A Bosselut**"],
+    "venue": "COLM 2024",
+    "year": 2024,
+    "type": "conference",
     "links": {
       "paper": "#"
     }
