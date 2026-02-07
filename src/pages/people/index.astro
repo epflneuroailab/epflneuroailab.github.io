@@ -9,7 +9,7 @@ const baseUrl = import.meta.env.BASE_URL;
 interface Person {
   name: string;
   role: string;
-  email: string;
+  email?: string;
   image?: string;
   website?: string;
   scholar?: string;
@@ -100,12 +100,14 @@ function getPersonImageUrl(image?: string): string | null {
                     <h3 class="text-xl font-bold text-gray-900 mb-1">{person.name}</h3>
                     <p class="text-[var(--color-primary-green)] font-medium text-sm mb-3">{person.role}</p>
                     <div class="flex flex-wrap gap-3">
-                      <a href={`mailto:${person.email}`} class="inline-flex items-center text-gray-500 hover:text-[var(--color-primary-green)] text-sm transition-colors">
-                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        Email
-                      </a>
+                      {person.email && (
+                        <a href={`mailto:${person.email}`} class="inline-flex items-center text-gray-500 hover:text-[var(--color-primary-green)] text-sm transition-colors">
+                          <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                          Email
+                        </a>
+                      )}
                       {person.website && (
                         <a href={person.website} target="_blank" rel="noopener" class="inline-flex items-center text-gray-500 hover:text-[var(--color-primary-green)] text-sm transition-colors">
                           <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -144,11 +146,13 @@ function getPersonImageUrl(image?: string): string | null {
                     <h3 class="font-semibold text-gray-900 mb-1">{person.name}</h3>
                     <p class="text-[var(--color-primary-green)] text-sm mb-3">{person.role}</p>
                     <div class="flex items-center gap-2">
-                      <a href={`mailto:${person.email}`} class="text-gray-400 hover:text-[var(--color-primary-green)] transition-colors" title="Email">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                      </a>
+                      {person.email && (
+                        <a href={`mailto:${person.email}`} class="text-gray-400 hover:text-[var(--color-primary-green)] transition-colors" title="Email">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                        </a>
+                      )}
                       {person.website && (
                         <a href={person.website} target="_blank" rel="noopener" class="text-gray-400 hover:text-[var(--color-primary-green)] transition-colors" title="Website">
                           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
